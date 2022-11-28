@@ -7,7 +7,7 @@ AnyBitmap anyBitmap;
 
 // Cast System.Drawing bitmap to AnyBitmap
 System.Drawing.Bitmap bitmapFromBitmap = new System.Drawing.Bitmap(@"FILE_PATH");
-anyBitmap= bitmapFromBitmap;
+anyBitmap = bitmapFromBitmap;
 
 // Cast System image to AnyBitmap
 System.Drawing.Image bitmapFromFile = System.Drawing.Image.FromFile(@"FILE_PATH");
@@ -15,7 +15,7 @@ anyBitmap = bitmapFromFile;
 
 // Cast SKBitmap to AnyBitmap
 SkiaSharp.SKBitmap skiaBitmap = SkiaSharp.SKBitmap.Decode(@"FILE_PATH");
-anyBitmap= skiaBitmap;
+anyBitmap = skiaBitmap;
 
 // Cast SKimage to AnyBitmap
 SkiaSharp.SKImage skiaImage = SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap.Decode(@"FILE_PATH"));
