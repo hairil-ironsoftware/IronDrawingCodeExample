@@ -1,6 +1,6 @@
 ﻿using IronSoftware.Drawing;
 using System;
 
-
+// Convert color to 32-bt ARGB value
 System.Drawing.Color bmColor = System.Drawing.Color.Black;
-bmColor.ToArgb(); //Color conversion to 32-bit ARGB value
+bmColor.ToArgb(); 
