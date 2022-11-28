@@ -1,25 +1,32 @@
 ﻿using IronSoftware.Drawing;
 using System;
 
+AnyBitmap bitmap;
 
-AnyBitmap bitmap = AnyBitmap.FromFile(@"FILE_PATH");
-bitmap.SaveAs("output.bmp"); //Generate AnyBitmap using filepath
+// Generate AnyBitmap using filepath
+bitmap = AnyBitmap.FromFile(@"FILE_PATH");
+bitmap.SaveAs("output.bmp");
 
+
+// Generate AnyBitmap from bytes
 byte[] bytes = File.ReadAllBytes(@"FILE_PATH");
-AnyBitmap bitmap = AnyBitmap.FromBytes(bytes);
-bitmap.SaveAs("result.bmp"); //Generate AnyBitmap from bytes
+bitmap = AnyBitmap.FromBytes(bytes);
+bitmap.SaveAs("result.bmp"); 
 
+// Generate AnyBitmap from memory stream
 byte[] bytes = File.ReadAllBytes(@"FILE_PATH");
 MemoryStream ms = new MemoryStream(bytes);
-AnyBitmap bitmap = AnyBitmap.FromStream(ms);
-bitmap.SaveAs("output.bmp");  //Generate AnyBitmap from memory stream
+bitmap = AnyBitmap.FromStream(ms);
+bitmap.SaveAs("output.bmp");  
 
+// Generate AnyBitmap from Uri
 Uri uri = new Uri("URI_PATH");
-AnyBitmap bitmap = AnyBitmap.FromUri(uri);
-bitmap.SaveAs("uriImage.bmp"); //Generate AnyBitmap from Uri
+bitmap = AnyBitmap.FromUri(uri);
+bitmap.SaveAs("uriImage.bmp"); 
 
-AnyBitmap bitmap = AnyBitmap.FromFile(@"FILE_PATH");
-bitmap.SaveAs("result.jpg"); //Generate AnyBitmap file from SVG file
+// Generate AnyBitmap file from SVG file
+bitmap = AnyBitmap.FromFile(@"FILE_PATH");
+bitmap.SaveAs("result.jpg"); 
 
 
 
