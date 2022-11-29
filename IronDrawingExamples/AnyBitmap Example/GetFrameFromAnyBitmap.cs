@@ -1,14 +1,14 @@
 ﻿using IronSoftware.Drawing;
-using System;
 
-AnyBitmap multiPage = AnyBitmap.FromFile(@"FILE_PATH.tiff"); //Load tiff Image as AnyBitmap
-multiPage.GetAllFrames.First().SaveAs("first.png"); //save first frame of a tiff file
-multiPage.GetAllFrames.Last().SaveAs("last.png"); //save last frame of a tiff
-multiPage.GetAllFrames.ElementAt(1).SaveAs("second.png"); //save frame at an index of a tiff
+//Load GIF or TIFF as AnyBitmap
+AnyBitmap gifOrTiff = AnyBitmap.FromFile(@"FILE_PATH");
 
-// save every frame of image of gif to image format
-AnyBitmap multiFrameImage = AnyBitmap.FromFile(@"FILE_PATH.gif");
-List<AnyBitmap> frames = (List<AnyBitmap>)multiFrameImage.GetAllFrames;
+gifOrTiff.GetAllFrames.First().SaveAs("first.png"); //First frame
+gifOrTiff.GetAllFrames.Last().SaveAs("last.png"); //Last frame
+gifOrTiff.GetAllFrames.ElementAt(1).SaveAs("second.png"); //n'th frame 
+
+// save every frame of image of GIF or TIFF to image on disk
+List<AnyBitmap> frames = (List<AnyBitmap>)gifOrTiff.GetAllFrames;
 for (int i = 0; i < frames.Count; i++)
 {
     frames[i].SaveAs("frame" + i + ".jpg");
