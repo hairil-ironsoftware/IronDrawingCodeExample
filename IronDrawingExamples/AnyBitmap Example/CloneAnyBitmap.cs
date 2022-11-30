@@ -1,5 +1,4 @@
 ﻿using IronSoftware.Drawing;
-using System;
 
 // Clone AnyBitmap
 AnyBitmap clonedframe = AnyBitmap.FromFile(@"FILE_PATH").Clone();
