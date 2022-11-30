@@ -1,5 +1,4 @@
 ﻿using IronSoftware.Drawing;
-using System;
 
 // Create multipage Tiff with different frame dimensions
 List<AnyBitmap> bitmaps = new List<AnyBitmap>()
