@@ -1,5 +1,4 @@
 ﻿using IronSoftware.Drawing;
-using System;
 
 AnyBitmap bitmap;
 
@@ -27,42 +26,3 @@ bitmap.SaveAs("uriImage.bmp");
 // Generate AnyBitmap file from SVG file
 bitmap = AnyBitmap.FromFile(@"FILE_PATH");
 bitmap.SaveAs("result.jpg"); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
