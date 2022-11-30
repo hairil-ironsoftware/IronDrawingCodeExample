@@ -1,5 +1,4 @@
 ﻿using IronSoftware.Drawing;
-using System;
 
 // Get, export, and read bytes
 AnyBitmap bitmap = AnyBitmap.FromFile(@"FILE_PATH");
