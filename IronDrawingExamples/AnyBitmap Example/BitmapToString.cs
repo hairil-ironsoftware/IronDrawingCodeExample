@@ -1,5 +1,4 @@
 ﻿using IronSoftware.Drawing;
-using System;
 
 AnyBitmap bitmap = AnyBitmap.FromFile(@"FILE_PATH");
 
