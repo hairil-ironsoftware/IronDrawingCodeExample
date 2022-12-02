@@ -14,5 +14,5 @@ ironColor.R;
 ironColor.G;
 ironColor.B;
 
-// Luminance is a value from 0 (black) to 100 (white) where 50 is the perceptual "middle grey"
+// Luminance
 ironColor.GetLuminance();
