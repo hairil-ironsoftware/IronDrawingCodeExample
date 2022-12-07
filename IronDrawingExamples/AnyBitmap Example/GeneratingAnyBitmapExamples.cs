@@ -24,5 +24,5 @@ bitmap = AnyBitmap.FromUri(uri);
 bitmap.SaveAs("uriImage.bmp"); 
 
 // Generate AnyBitmap file from SVG file
-bitmap = AnyBitmap.FromFile(@"FILE_PATH");
+bitmap = AnyBitmap.FromFile(@"FILE_PATH.svg");
 bitmap.SaveAs("result.jpg"); 
