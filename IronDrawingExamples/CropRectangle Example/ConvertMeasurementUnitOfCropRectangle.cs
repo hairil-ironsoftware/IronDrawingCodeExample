@@ -1,8 +1,8 @@
 ﻿using IronSoftware.Drawing;
 
-//Instantiate CropRectangle with default value unit of pixels
-CropRectangle pxCropRect = new CropRectangle(15, 25, 150, 175); //(X, Y, Width, Height) 
+// Instantiate a CropRectangle (Default measurement unit is pixels)
+CropRectangle pxCropRect = new CropRectangle(15, 25, 150, 175); // (X, Y, Width, Height) 
 
-//Convert and print CropRectangle measurement in milimeter
+// Convert and print a CropRectangle measurement in millimeters
 CropRectangle mmCropRect = pxCropRect.ConvertTo(MeasurementUnits.Millimeters, 20);
 Console.WriteLine(mmCropRect.X); 
