@@ -6,7 +6,6 @@ AnyBitmap bitmap;
 bitmap = AnyBitmap.FromFile(@"FILE_PATH");
 bitmap.SaveAs("output.bmp");
 
-
 // Generate AnyBitmap from bytes
 byte[] bytes = File.ReadAllBytes(@"FILE_PATH");
 bitmap = AnyBitmap.FromBytes(bytes);

@@ -1,6 +1,6 @@
 ﻿using IronSoftware.Drawing;
 
-// Create multipage Tiff with different frame dimensions
+// Create a multipage Tiff with frames of different dimensions
 List<AnyBitmap> bitmaps = new List<AnyBitmap>()
 {
     AnyBitmap.FromFile("cropframe1.jpg"),    
@@ -11,7 +11,7 @@ AnyBitmap multiFrameTiff = AnyBitmap.CreateMultiFrameTiff(bitmaps);
 multiFrameTiff.SaveAs("multiTiffwcrops.tiff");  
 
 
-//Create multipage Gif with different frame dimensions
+// Create a multipage Gif with frames of different dimensions
 List<AnyBitmap> bitmaps = new List<AnyBitmap>()
 {
     AnyBitmap.FromFile("frame1.jpg"),
