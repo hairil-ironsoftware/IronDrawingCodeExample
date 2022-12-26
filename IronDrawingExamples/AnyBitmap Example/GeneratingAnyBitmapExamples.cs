@@ -1,4 +1,8 @@
+#region TopData
 /**
+~/examples/generate-anybitmap/
+
+
 <h1> Generate AnyBitmap</h1>
 
 <p>In order for users to use IronDrawing tool to open, read, and manipulate image files, AnyBitmap type files must first be generated. There are a number of methods to load image files and generate AnyBitmap files. </p>
@@ -22,29 +26,37 @@
 **/
 
 using IronSoftware.Drawing;
+#endregion
+public class generate_anybitmap
+{
+    public void code()
+    {
+        AnyBitmap bitmap;
 
-AnyBitmap bitmap;
+        // Generate AnyBitmap using filepath
+        bitmap = AnyBitmap.FromFile(@"FILE_PATH");
+        bitmap.SaveAs("output.bmp");
 
-// Generate AnyBitmap using filepath
-bitmap = AnyBitmap.FromFile(@"FILE_PATH");
-bitmap.SaveAs("output.bmp");
+        // Generate AnyBitmap from bytes
+        byte[] bytes = File.ReadAllBytes(@"FILE_PATH");
+        bitmap = AnyBitmap.FromBytes(bytes);
+        bitmap.SaveAs("result.bmp");
 
-// Generate AnyBitmap from bytes
-byte[] bytes = File.ReadAllBytes(@"FILE_PATH");
-bitmap = AnyBitmap.FromBytes(bytes);
-bitmap.SaveAs("result.bmp"); 
+        // Generate AnyBitmap from memory stream
+        byte[] bytes = File.ReadAllBytes(@"FILE_PATH");
+        MemoryStream ms = new MemoryStream(bytes);
+        bitmap = AnyBitmap.FromStream(ms);
+        bitmap.SaveAs("output.bmp");
 
-// Generate AnyBitmap from memory stream
-byte[] bytes = File.ReadAllBytes(@"FILE_PATH");
-MemoryStream ms = new MemoryStream(bytes);
-bitmap = AnyBitmap.FromStream(ms);
-bitmap.SaveAs("output.bmp");  
+        // Generate AnyBitmap from Uri
+        Uri uri = new Uri("URI_PATH");
+        bitmap = AnyBitmap.FromUri(uri);
+        bitmap.SaveAs("uriImage.bmp");
 
-// Generate AnyBitmap from Uri
-Uri uri = new Uri("URI_PATH");
-bitmap = AnyBitmap.FromUri(uri);
-bitmap.SaveAs("uriImage.bmp"); 
+        // Generate AnyBitmap file from SVG file
+        bitmap = AnyBitmap.FromFile(@"FILE_PATH.svg");
+        bitmap.SaveAs("result.jpg");
+    }
+}
 
-// Generate AnyBitmap file from SVG file
-bitmap = AnyBitmap.FromFile(@"FILE_PATH.svg");
-bitmap.SaveAs("result.jpg"); 
+

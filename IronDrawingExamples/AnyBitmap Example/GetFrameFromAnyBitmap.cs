@@ -1,4 +1,7 @@
+#region TopData
 /**
+~/examples/get-frame-from-anybitmap/
+
 <h1> Get frame from AnyBitmap</h1>
 
 <p>This feature enable users to get or capture frames from a multipage GIF file or TIFF file and save it locally into any image format. Saved frames can be further manipulated in IronDrawing or other Iron Software tools as users wish.</p>
@@ -7,17 +10,25 @@
 **/
 
 using IronSoftware.Drawing;
-
-//Load a GIF or TIFF as AnyBitmap (loads ALL frames)
-AnyBitmap gifOrTiff = AnyBitmap.FromFile(@"FILE_PATH");
-
-gifOrTiff.GetAllFrames.First().SaveAs("first.png"); // First frame
-gifOrTiff.GetAllFrames.Last().SaveAs("last.png"); // Last frame
-gifOrTiff.GetAllFrames.ElementAt(1).SaveAs("second.png"); // n'th frame 
-
-// Save every frame of a GIF or TIFF to images on disk
-List<AnyBitmap> frames = (List<AnyBitmap>)gifOrTiff.GetAllFrames;
-for (int i = 0; i < frames.Count; i++)
+#endregion
+public class get_frame_from_anybitmap
 {
-    frames[i].SaveAs("frame_" + i + ".jpg");
+    public void code()
+    {
+        //Load a GIF or TIFF as AnyBitmap (loads ALL frames)
+        AnyBitmap gifOrTiff = AnyBitmap.FromFile(@"FILE_PATH");
+
+        gifOrTiff.GetAllFrames.First().SaveAs("first.png"); // First frame
+        gifOrTiff.GetAllFrames.Last().SaveAs("last.png"); // Last frame
+        gifOrTiff.GetAllFrames.ElementAt(1).SaveAs("second.png"); // n'th frame 
+
+        // Save every frame of a GIF or TIFF to images on disk
+        List<AnyBitmap> frames = (List<AnyBitmap>)gifOrTiff.GetAllFrames;
+        for (int i = 0; i < frames.Count; i++)
+        {
+            frames[i].SaveAs("frame_" + i + ".jpg");
+        }
+    }
 }
+
+

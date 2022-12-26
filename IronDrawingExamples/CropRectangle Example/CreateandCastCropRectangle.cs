@@ -1,4 +1,7 @@
+#region TopData
 /**
+~/examples/create-and-cast-croprectangle/
+
 <h1> Create and Cast CropRectangle</h1>
 
 <p>CropRectangle is one of a very useful features provided by IronDrawing which can be used for users to crop any image file. For customer who are using rectangles from System.Drawing.Rectangle can also cast it to IronSoftware.Drawing.CropRectangle using Cast method.</p>
@@ -14,16 +17,23 @@
 **/
 
 using IronSoftware.Drawing;
+#endregion
+public class create_and_cast_croprectangle
+{
+    public void code()
+    {
+        // Create a new CropRectangle object
+        CropRectangle cropRectangle = new CropRectangle(5, 5, 50, 50); // (X, Y, Width, Height) in pixels
 
-// Create a new CropRectangle object
-CropRectangle cropRectangle = new CropRectangle(5, 5, 50, 50); // (X, Y, Width, Height) in pixels
+        // Cast between System.Drawing.Rectangle and IronSoftware.Drawing.CropRectangle
+        System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(10, 10, 150, 150);
+        IronSoftware.Drawing.CropRectangle ironRectangle = rectangle;
 
-// Cast between System.Drawing.Rectangle and IronSoftware.Drawing.CropRectangle
-System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(10, 10, 150, 150);
-IronSoftware.Drawing.CropRectangle ironRectangle = rectangle;
+        // Access CropRectangle properties:
+        ironRectangle.X;
+        ironRectangle.Y;
+        ironRectangle.Width;
+        ironRectangle.Height;
+    }
+}
 
-// Access CropRectangle properties:
-ironRectangle.X;
-ironRectangle.Y;
-ironRectangle.Width;
-ironRectangle.Height;

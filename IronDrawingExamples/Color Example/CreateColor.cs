@@ -1,4 +1,8 @@
+#region TopData
 /**
+~/examples/create-color/
+
+
 <h1> Create Color</h1>
 
 <p>IronDrawing enables users to create their own color using various ways including Hexadecimal, RGB values, and also from Enum where the customer can choose an already available color.</p>
@@ -18,21 +22,29 @@
 **/
 
 using IronSoftware.Drawing;
+#endregion
+public class create_color
+{
+    public void code()
+    {
+        // Create a new Color object
+        Color fromHex = new Color("#191919");
+        Color fromRgb = new Color(255, 255, 0);
+        Color fromEnum = Color.Crimson;
 
-// Create a new Color object
-Color fromHex = new Color("#191919");
-Color fromRgb = new Color(255, 255, 0);
-Color fromEnum = Color.Crimson;
+        // Cast between System.Drawing.Color and IronSoftware.Drawing.Color
+        System.Drawing.Color drawingColor = System.Drawing.Color.Red;
+        IronSoftware.Drawing.Color ironColor = drawingColor;
 
-// Cast between System.Drawing.Color and IronSoftware.Drawing.Color
-System.Drawing.Color drawingColor = System.Drawing.Color.Red;
-IronSoftware.Drawing.Color ironColor = drawingColor;
+        // Get the Alpha, Red, Green, or Blue channel value of a Color
+        ironColor.A;
+        ironColor.R;
+        ironColor.G;
+        ironColor.B;
 
-// Get the Alpha, Red, Green, or Blue channel value of a Color
-ironColor.A;
-ironColor.R;
-ironColor.G;
-ironColor.B;
+        // Luminance
+        ironColor.GetLuminance();
+    }
+}
 
-// Luminance
-ironColor.GetLuminance();
+

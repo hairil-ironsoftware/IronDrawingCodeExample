@@ -1,4 +1,8 @@
+#region TopData
 /**
+~/examples/clone-anybitmap/
+
+
 <h1> Clone AnyBitmap</h1>
 
 <p>One feature that IronDrawing provide is Clone AnyBitmap. This feature enable users to make an exact copy of AnyBitmap file and save it without affecting the copied file. Users can also specify the area that they want to copy from a file by implementing CropRectangle feature inside and save the copy of the specified part of the file without modifying the original file.</p>
@@ -7,11 +11,18 @@
 **/
 
 using IronSoftware.Drawing;
+#endregion
+public class clone_anybitmap
+{
+    public void code()
+    {
+        // Clone an AnyBitmap
+        AnyBitmap clonedframe = AnyBitmap.FromFile(@"FILE_PATH").Clone();
+        clonedframe.SaveAs("frameClone.jpg");
 
-// Clone an AnyBitmap
-AnyBitmap clonedframe = AnyBitmap.FromFile(@"FILE_PATH").Clone();
-clonedframe.SaveAs("frameClone.jpg"); 
+        // Clone frames of any image with a specified crop area
+        AnyBitmap clonedWithCrop = AnyBitmap.FromFile(@"FILE_PATH").Clone(new CropRectangle(0, 0, 150, 150));
+        clonedWithCrop.SaveAs("cropCloned.jpg");
+    }
+}
 
-// Clone frames of any image with a specified crop area
-AnyBitmap clonedWithCrop = AnyBitmap.FromFile(@"FILE_PATH").Clone(new CropRectangle(0, 0, 150, 150));
-clonedWithCrop.SaveAs("cropCloned.jpg"); 

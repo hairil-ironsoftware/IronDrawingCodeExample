@@ -1,4 +1,8 @@
+#region TopData
 /**
+~/examples/create-multipage-image/
+
+
 <h1> Create Multipage TIFF and GIF </h1>
 
 <p>Users are able to combine AnyBitmap files into a multipage TIFF or GIF files in IronDrawing. Users can also use different dimensions of frame to create the multipage GIF and TIFF files.</p>
@@ -7,25 +11,32 @@
 **/
 
 using IronSoftware.Drawing;
-
-// Create a multipage Tiff with frames of different dimensions
-List<AnyBitmap> bitmaps = new List<AnyBitmap>()
+#endregion
+public class create_multipage_image
 {
-    AnyBitmap.FromFile("cropframe1.jpg"),    
-    AnyBitmap.FromFile("frame2.jpg"),
-    AnyBitmap.FromFile("cropframe3.jpg"),    
-};
-AnyBitmap multiFrameTiff = AnyBitmap.CreateMultiFrameTiff(bitmaps);
-multiFrameTiff.SaveAs("multiTiffwcrops.tiff");  
+    public void code()
+    {
+        // Create a multipage Tiff with frames of different dimensions
+        List<AnyBitmap> bitmaps = new List<AnyBitmap>()
+        {
+             AnyBitmap.FromFile("cropframe1.jpg"),
+             AnyBitmap.FromFile("frame2.jpg"),
+            AnyBitmap.FromFile("cropframe3.jpg"),
+        };
+        AnyBitmap multiFrameTiff = AnyBitmap.CreateMultiFrameTiff(bitmaps);
+        multiFrameTiff.SaveAs("multiTiffwcrops.tiff");
 
 
-// Create a multipage Gif with frames of different dimensions
-List<AnyBitmap> bitmaps = new List<AnyBitmap>()
-{
-    AnyBitmap.FromFile("frame1.jpg"),
-    AnyBitmap.FromFile("frame2.jpg"),
-    AnyBitmap.FromFile("frame3.jpg"),
-    AnyBitmap.FromFile("cropframe4.jpg")
-};
-AnyBitmap multiFrameGif = AnyBitmap.CreateMultiFrameGif(bitmaps);
-multiFrameGif.SaveAs("multiGif.gif");  
+        // Create a multipage Gif with frames of different dimensions
+        List<AnyBitmap> bitmaps = new List<AnyBitmap>()
+        {
+            AnyBitmap.FromFile("frame1.jpg"),
+            AnyBitmap.FromFile("frame2.jpg"),
+            AnyBitmap.FromFile("frame3.jpg"),
+            AnyBitmap.FromFile("cropframe4.jpg")
+        };
+        AnyBitmap multiFrameGif = AnyBitmap.CreateMultiFrameGif(bitmaps);
+        multiFrameGif.SaveAs("multiGif.gif");
+    }
+}
+

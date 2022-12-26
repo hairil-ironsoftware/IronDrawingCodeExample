@@ -1,4 +1,7 @@
+#region TopData
 /**
+~/examples/get-frame-number-from-anybitmap/
+
 
 <h1> Get number of frames in AnyBitmap</h1>
 
@@ -9,7 +12,15 @@
 **/
 
 using IronSoftware.Drawing;
+#endregion
+public class get_frame_number_from_anybitmap
+{
+    public void code()
+    {
+        // Get and print the number of frames in any multipage GIF or TIFF file
+        var multiFrameImage = AnyBitmap.FromFile("FILE_PATH").FrameCount;
+        Console.WriteLine(multiFrameImage);
+    }
+}
 
-// Get and print the number of frames in any multipage GIF or TIFF file
-var multiFrameImage = AnyBitmap.FromFile("FILE_PATH").FrameCount;
-Console.WriteLine(multiFrameImage);
+
