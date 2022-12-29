@@ -1,6 +1,6 @@
 #region TopData
 /**
-~/Code Examples/bitmap-to-stream/
+~/examples/bitmap-to-stream/
 
 
 <h1> Converting Bitmap To Stream </h1>
